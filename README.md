@@ -1,2 +1,2 @@
 # lilweb
-Single-file web server
+A small, single-file web server written in Tcl, with CGI support.
