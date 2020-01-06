@@ -1,0 +1,4 @@
+#!/usr/bin/fossil
+directory: /usr/local/bedrock/
+notfound: /index.html
+localauth

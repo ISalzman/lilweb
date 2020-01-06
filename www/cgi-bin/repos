@@ -1,0 +1,17 @@
+#!/usr/bin/tclsh
+
+set REPOROOT "/usr/local/bedrock"
+set REPOEXT ".fossil"
+
+puts "Content-type: text/html; charset=iso-8559-1\n"
+puts "<html>"
+puts "<head><title>Repositories</title></head>"
+puts "<body>"
+puts "<h2>Fossil Repositories</h2>"
+puts "<ul>"
+foreach repo [lsort -nocase [glob -nocomplain -directory $REPOROOT -tails *$REPOEXT]] {
+    set proj [file rootname $repo]
+    puts "<li><a href=\"[file join [file dirname $::env(SCRIPT_NAME)] repo $proj]\">$proj</a></li>"
+}
+puts "</ul>"
+puts "</body></html>"
